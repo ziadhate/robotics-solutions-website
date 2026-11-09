@@ -1,0 +1,1250 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07111f">
+
+  <title>Robotics Solutions | Intelligent Automation</title>
+  <meta name="description" content="Robotics Solutions develops intelligent robotics, autonomous systems, embedded technologies and AI-powered automation for real-world industries.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg2: #0b192a;
+      --card: #101f32;
+      --blue: #168cff;
+      --cyan: #36d9ff;
+      --white: #f4f8ff;
+      --muted: #a1b1c5;
+      --border: rgba(255,255,255,.10);
+      --font: "DM Sans", sans-serif;
+      --heading: "Space Grotesk", sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: var(--font);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .container {
+      width: min(1160px, 90%);
+      margin: auto;
+    }
+
+    .section {
+      padding: 105px 0;
+    }
+
+    .section-label {
+      color: var(--cyan);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .section-title {
+      font-family: var(--heading);
+      font-size: clamp(32px, 5vw, 49px);
+      line-height: 1.15;
+      max-width: 750px;
+      margin-bottom: 20px;
+    }
+
+    .section-description {
+      color: var(--muted);
+      max-width: 650px;
+      font-size: 16px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #fff, var(--cyan), var(--blue));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 23px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 14px;
+      transition: .3s;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      color: white;
+      background: linear-gradient(110deg, #0878e8, #14b9ee);
+      box-shadow: 0 8px 35px rgba(22,140,255,.22);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(22,140,255,.4);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,.2);
+      color: white;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--cyan);
+      color: var(--cyan);
+    }
+
+    /* NAVBAR */
+
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      background: rgba(7,17,31,.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-family: var(--heading);
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    .logo-icon {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      color: var(--cyan);
+      border: 1px solid rgba(54,217,255,.4);
+      background: rgba(22,140,255,.1);
+      font-size: 22px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 13px;
+      transition: .3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--cyan);
+    }
+
+    .nav-cta {
+      padding: 11px 18px;
+      font-size: 13px;
+    }
+
+    .menu-btn {
+      display: none;
+      background: none;
+      border: 0;
+      color: white;
+      font-size: 27px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 780px;
+      padding: 170px 0 100px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(ellipse at 78% 45%, rgba(0,117,255,.19), transparent 40%),
+        linear-gradient(140deg, #07111f, #0a1b30 70%, #07111f);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .12;
+      background-image:
+        linear-gradient(rgba(54,217,255,.3) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(54,217,255,.3) 1px, transparent 1px);
+      background-size: 55px 55px;
+      mask-image: linear-gradient(to right, transparent, black);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 690px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      border: 1px solid rgba(54,217,255,.3);
+      color: var(--cyan);
+      background: rgba(54,217,255,.07);
+      padding: 8px 14px;
+      border-radius: 30px;
+      font-size: 12px;
+      margin-bottom: 27px;
+    }
+
+    .hero h1 {
+      font-family: var(--heading);
+      font-size: clamp(45px, 7vw, 76px);
+      line-height: 1.08;
+      letter-spacing: -2px;
+      margin-bottom: 25px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 17px;
+      max-width: 590px;
+      margin-bottom: 34px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .hero-note {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-top: 55px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .hero-note span {
+      color: var(--cyan);
+      font-weight: 700;
+    }
+
+    .hero-orb {
+      position: absolute;
+      right: 8%;
+      top: 22%;
+      width: 390px;
+      height: 390px;
+      border: 1px solid rgba(54,217,255,.18);
+      border-radius: 50%;
+      box-shadow: 0 0 100px rgba(0,130,255,.15), inset 0 0 70px rgba(0,130,255,.08);
+      display: grid;
+      place-items: center;
+    }
+
+    .hero-orb::before,
+    .hero-orb::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(54,217,255,.18);
+      border-radius: 50%;
+    }
+
+    .hero-orb::before {
+      inset: 30px;
+    }
+
+    .hero-orb::after {
+      inset: -35px;
+      border-style: dashed;
+      animation: rotate 35s linear infinite;
+    }
+
+    .orb-core {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 85px;
+      background: radial-gradient(circle, #164e83, #0a203a 70%);
+      box-shadow: 0 0 65px rgba(22,140,255,.35);
+    }
+
+    .floating-tag {
+      position: absolute;
+      background: rgba(12,32,53,.92);
+      border: 1px solid rgba(54,217,255,.25);
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-size: 12px;
+      color: var(--cyan);
+      box-shadow: 0 10px 35px rgba(0,0,0,.25);
+    }
+
+    .tag-one { top: 5%; left: 0; }
+    .tag-two { right: -10%; top: 45%; }
+    .tag-three { bottom: 4%; left: 8%; }
+
+    @keyframes rotate {
+      to { transform: rotate(360deg); }
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about-visual {
+      min-height: 390px;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background:
+        radial-gradient(circle at 50% 40%, rgba(22,140,255,.22), transparent 55%),
+        linear-gradient(145deg, #102a45, #091827);
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-visual .big-symbol {
+      font-size: 125px;
+      filter: drop-shadow(0 0 30px rgba(54,217,255,.3));
+    }
+
+    .visual-caption {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      padding: 15px;
+      background: rgba(5,15,27,.75);
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .about-points {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .point {
+      padding: 14px;
+      border-left: 2px solid var(--blue);
+      background: rgba(22,140,255,.06);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    /* SOLUTIONS */
+
+    .solutions {
+      background: var(--bg2);
+    }
+
+    .section-heading {
+      margin-bottom: 45px;
+    }
+
+    .solutions-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .solution-card {
+      padding: 28px;
+      border: 1px solid var(--border);
+      background: linear-gradient(145deg, rgba(18,37,59,.95), rgba(10,25,42,.9));
+      border-radius: 14px;
+      transition: .3s;
+    }
+
+    .solution-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(54,217,255,.45);
+      box-shadow: 0 15px 40px rgba(0,0,0,.2);
+    }
+
+    .solution-icon {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: rgba(22,140,255,.12);
+      border: 1px solid rgba(54,217,255,.2);
+      font-size: 25px;
+      margin-bottom: 22px;
+    }
+
+    .solution-card h3 {
+      font-family: var(--heading);
+      font-size: 19px;
+      margin-bottom: 12px;
+    }
+
+    .solution-card p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* INDUSTRIES */
+
+    .industries-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 40px;
+    }
+
+    .industry {
+      min-height: 155px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      transition: .3s;
+    }
+
+    .industry:hover {
+      border-color: var(--cyan);
+      background: #102942;
+    }
+
+    .industry-icon {
+      font-size: 30px;
+    }
+
+    .industry h3 {
+      font-family: var(--heading);
+      font-size: 16px;
+    }
+
+    /* FEATURED PROJECT */
+
+    .project {
+      background:
+        radial-gradient(circle at 90% 50%, rgba(0,120,255,.15), transparent 40%),
+        #0a1829;
+    }
+
+    .project-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+      padding: 42px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: rgba(15,34,55,.8);
+      margin-top: 40px;
+    }
+
+    .project-image {
+      min-height: 370px;
+      border-radius: 14px;
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, #102b48, #07111f);
+      border: 1px solid var(--border);
+      position: relative;
+    }
+
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 370px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .image-placeholder {
+      text-align: center;
+      padding: 30px;
+      color: var(--muted);
+    }
+
+    .image-placeholder span {
+      font-size: 80px;
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .project-content h3 {
+      font-family: var(--heading);
+      font-size: 29px;
+      line-height: 1.2;
+      margin-bottom: 17px;
+    }
+
+    .project-content p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .project-features {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .project-features li {
+      color: #d5e4f5;
+      font-size: 13px;
+    }
+
+    .project-features li::before {
+      content: "✓";
+      color: var(--cyan);
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    /* TECHNOLOGY */
+
+    .technology {
+      background: var(--bg2);
+    }
+
+    .tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 35px;
+    }
+
+    .tech-item {
+      padding: 13px 19px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      border-radius: 8px;
+      color: #d6e7f8;
+      font-size: 13px;
+      transition: .3s;
+    }
+
+    .tech-item:hover {
+      color: var(--cyan);
+      border-color: var(--cyan);
+    }
+
+    /* PROCESS */
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 45px;
+    }
+
+    .process-card {
+      border-top: 2px solid var(--blue);
+      padding-top: 20px;
+    }
+
+    .process-number {
+      font-family: var(--heading);
+      color: var(--cyan);
+      font-size: 30px;
+      font-weight: 700;
+      margin-bottom: 13px;
+    }
+
+    .process-card h3 {
+      font-size: 16px;
+      margin-bottom: 9px;
+    }
+
+    .process-card p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      background:
+        radial-gradient(circle at 50% 100%, rgba(22,140,255,.17), transparent 50%),
+        var(--bg2);
+    }
+
+    .contact-box {
+      padding: 55px 30px;
+      border: 1px solid rgba(54,217,255,.2);
+      border-radius: 18px;
+      text-align: center;
+      background: linear-gradient(130deg, rgba(14,41,68,.9), rgba(8,23,39,.9));
+    }
+
+    .contact-box h2 {
+      font-family: var(--heading);
+      font-size: clamp(30px, 5vw, 45px);
+      margin-bottom: 15px;
+    }
+
+    .contact-box p {
+      color: var(--muted);
+      max-width: 620px;
+      margin: 0 auto 28px;
+    }
+
+    .contact-actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 35px 0;
+      border-top: 1px solid var(--border);
+      background: #050d17;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-copy {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .footer-links a:hover {
+      color: var(--cyan);
+    }
+
+    /* ANIMATION */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 950px) {
+      .hero-orb {
+        opacity: .25;
+        right: -100px;
+      }
+
+      .solutions-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-grid,
+      .project-box {
+        grid-template-columns: 1fr;
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 700px) {
+      .menu-btn {
+        display: block;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 78px;
+        left: 0;
+        width: 100%;
+        padding: 20px 5%;
+        background: #091827;
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 19px;
+        display: none;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .hero {
+        min-height: 720px;
+        padding-top: 140px;
+      }
+
+      .hero-orb {
+        width: 250px;
+        height: 250px;
+        top: auto;
+        bottom: 5%;
+        right: -60px;
+        opacity: .2;
+      }
+
+      .orb-core {
+        width: 120px;
+        height: 120px;
+        font-size: 55px;
+      }
+
+      .solutions-grid,
+      .industries-grid,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-points {
+        grid-template-columns: 1fr;
+      }
+
+      .project-box {
+        padding: 20px;
+      }
+
+      .section {
+        padding: 75px 0;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <a href="#home" class="logo">
+        <span class="logo-icon">⌘</span>
+        <span>ROBOTICS<span class="gradient-text"> SOLUTIONS</span></span>
+      </a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation">☰</button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#solutions">Solutions</a></li>
+        <li><a href="#industries">Industries</a></li>
+        <li><a href="#project">Our Project</a></li>
+        <li><a href="#technology">Technology</a></li>
+      </ul>
+
+      <a href="#contact" class="btn btn-primary nav-cta">Let's Collaborate ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">✦ ENGINEERING THE INTELLIGENT FUTURE</div>
+
+        <h1>
+          We Build <span class="gradient-text">Robotics Solutions</span>
+          For The Real World.
+        </h1>
+
+        <p>
+          Transforming complex challenges into intelligent systems.
+          We combine robotics, embedded engineering, AI, and automation
+          to create practical solutions for tomorrow's industries.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#solutions" class="btn btn-primary">Explore Our Solutions ↗</a>
+          <a href="#about" class="btn btn-outline">Discover Our Vision</a>
+        </div>
+
+        <div class="hero-note">
+          <span>ROBOTICS</span> • <span>AI</span> • <span>EMBEDDED SYSTEMS</span> • <span>AUTOMATION</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-orb">
+      <div class="orb-core">🤖</div>
+      <div class="floating-tag tag-one">AI & Computer Vision</div>
+      <div class="floating-tag tag-two">Autonomous Systems</div>
+      <div class="floating-tag tag-three">Embedded Engineering</div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="container about-grid">
+      <div class="about-visual reveal">
+        <div class="big-symbol">⚙️</div>
+        <div class="visual-caption">
+          ENGINEERING • INTELLIGENCE • INNOVATION
+          <br>Turning ideas into engineered solutions.
+        </div>
+      </div>
+
+      <div class="about-text reveal">
+        <div class="section-label">WHO WE ARE</div>
+        <h2 class="section-title">Engineering Beyond <span class="gradient-text">Boundaries.</span></h2>
+
+        <p>
+          Robotics Solutions is an emerging engineering initiative focused
+          on designing and developing intelligent robotic systems and
+          automation technologies.
+        </p>
+
+        <p>
+          Our approach brings together software, electronics, mechanical
+          design, embedded systems, and artificial intelligence to address
+          real operational challenges.
+        </p>
+
+        <p>
+          We believe robotics should be more than impressive technology.
+          It should deliver practical value, solve meaningful problems,
+          and adapt to the needs of people and industries.
+        </p>
+
+        <div class="about-points">
+          <div class="point">01 — Innovation-driven engineering</div>
+          <div class="point">02 — Practical problem solving</div>
+          <div class="point">03 — Modular system design</div>
+          <div class="point">04 — Scalable technology vision</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTIONS -->
+  <section class="section solutions" id="solutions">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div class="section-label">WHAT WE DO</div>
+        <h2 class="section-title">Our <span class="gradient-text">Engineering Solutions</span></h2>
+        <p class="section-description">
+          Integrated technologies designed to connect intelligence,
+          automation, and the physical world.
+        </p>
+      </div>
+
+      <div class="solutions-grid">
+
+        <article class="solution-card reveal">
+          <div class="solution-icon">🤖</div>
+          <h3>Autonomous Robotics</h3>
+          <p>Intelligent mobile robots, autonomous navigation, motion control, and robotic system integration.</p>
+        </article>
+
+        <article class="solution-card reveal">
+          <div class="solution-icon">🧠</div>
+          <h3>AI & Computer Vision</h3>
+          <p>Machine perception, object detection, environment understanding, and AI-assisted automation.</p>
+        </article>
+
+        <article class="solution-card reveal">
+          <div class="solution-icon">🔌</div>
+          <h3>Embedded Systems</h3>
+          <p>Microcontroller firmware, real-time systems, sensor integration, and hardware-software development.</p>
+        </article>
+
+        <article class="solution-card reveal">
+          <div class="solution-icon">⚙️</div>
+          <h3>Industrial Automation</h3>
+          <p>Smart control systems, connected devices, monitoring, and customized automation concepts.</p>
+        </article>
+
+        <article class="solution-card reveal">
+          <div class="solution-icon">🌐</div>
+          <h3>IoT & Smart Systems</h3>
+          <p>Connected devices, telemetry, remote monitoring, communication systems, and intelligent dashboards.</p>
+        </article>
+
+        <article class="solution-card reveal">
+          <div class="solution-icon">🧩</div>
+          <h3>Custom Engineering</h3>
+          <p>Research, prototyping, system architecture, and multidisciplinary engineering solutions.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRIES -->
+  <section class="section" id="industries">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div class="section-label">WHERE WE CREATE VALUE</div>
+        <h2 class="section-title">One Vision. <span class="gradient-text">Multiple Industries.</span></h2>
+        <p class="section-description">
+          Our long-term vision is to adapt robotics and intelligent
+          automation to different environments and operational needs.
+        </p>
+      </div>
+
+      <div class="industries-grid">
+        <div class="industry reveal">
+          <span class="industry-icon">🏥</span>
+          <h3>Healthcare & Hospitals</h3>
+        </div>
+
+        <div class="industry reveal">
+          <span class="industry-icon">🏭</span>
+          <h3>Manufacturing & Factories</h3>
+        </div>
+
+        <div class="industry reveal">
+          <span class="industry-icon">📦</span>
+          <h3>Warehousing & Logistics</h3>
+        </div>
+
+        <div class="industry reveal">
+          <span class="industry-icon">🧪</span>
+          <h3>Laboratories & Research</h3>
+        </div>
+
+        <div class="industry reveal">
+          <span class="industry-icon">🏨</span>
+          <h3>Hotels & Hospitality</h3>
+        </div>
+
+        <div class="industry reveal">
+          <span class="industry-icon">🏢</span>
+          <h3>Smart Facilities & Offices</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PROJECT -->
+  <section class="section project" id="project">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div class="section-label">FEATURED PROJECT</div>
+        <h2 class="section-title">Innovation in <span class="gradient-text">Healthcare Robotics.</span></h2>
+        <p class="section-description">
+          Our first featured application: an intelligent autonomous
+          hospital assistant designed around real healthcare logistics needs.
+        </p>
+      </div>
+
+      <div class="project-box reveal">
+        <div class="project-image">
+          <!-- Replace hospital-robot.png with your robot image file -->
+          <img
+            src="hospital-robot.png"
+            alt="Autonomous AI-powered hospital robot concept"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+          >
+          <div class="image-placeholder" style="display:none;">
+            <span>🤖</span>
+            <strong>Hospital Robot Concept</strong>
+            <p>Add your hospital robot image as hospital-robot.png</p>
+          </div>
+        </div>
+
+        <div class="project-content">
+          <div class="section-label">HEALTHCARE INNOVATION</div>
+          <h3>Autonomous AI-Powered Hospital Robot</h3>
+
+          <p>
+            An intelligent hospital assistant concept combining autonomous
+            indoor mobility, secure delivery, human-robot interaction,
+            and remote communication capabilities.
+          </p>
+
+          <ul class="project-features">
+            <li>Autonomous indoor navigation and obstacle avoidance</li>
+            <li>Transportation of medicines and medical supplies</li>
+            <li>Support for selected portable medical equipment</li>
+            <li>Human-robot interaction and voice interface</li>
+            <li>Remote doctor-patient communication concept</li>
+            <li>Centralized hospital management dashboard</li>
+          </ul>
+
+          <a
+            href="https://github.com/ziadhate/Autonomous-Hospital-Delivery-Robot"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary"
+          >
+            Explore Project on GitHub ↗
+          </a>
+
+          <p style="font-size:11px;margin-top:14px;">
+            Project under development. Capabilities are subject to
+            implementation, integration, and testing.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECHNOLOGY -->
+  <section class="section technology" id="technology">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div class="section-label">OUR TECHNOLOGY</div>
+        <h2 class="section-title">Built on <span class="gradient-text">Engineering Excellence.</span></h2>
+        <p class="section-description">
+          We explore modern technologies across software, electronics,
+          intelligent perception, and autonomous systems.
+        </p>
+      </div>
+
+      <div class="tech-list reveal">
+        <span class="tech-item">ROS 2</span>
+        <span class="tech-item">Linux</span>
+        <span class="tech-item">Embedded C</span>
+        <span class="tech-item">STM32</span>
+        <span class="tech-item">Raspberry Pi</span>
+        <span class="tech-item">Python</span>
+        <span class="tech-item">Computer Vision</span>
+        <span class="tech-item">OpenCV</span>
+        <span class="tech-item">SLAM</span>
+        <span class="tech-item">Nav2</span>
+        <span class="tech-item">IoT</span>
+        <span class="tech-item">CAN Bus</span>
+        <span class="tech-item">RTOS</span>
+        <span class="tech-item">C++</span>
+        <span class="tech-item">AI Integration</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div class="section-label">OUR APPROACH</div>
+        <h2 class="section-title">From Concept to <span class="gradient-text">Real-World Solutions.</span></h2>
+        <p class="section-description">
+          A structured engineering process that connects research,
+          development, integration, and validation.
+        </p>
+      </div>
+
+      <div class="process-grid">
+        <div class="process-card reveal">
+          <div class="process-number">01</div>
+          <h3>Understand</h3>
+          <p>Study the challenge, identify requirements, and understand the operating environment.</p>
+        </div>
+
+        <div class="process-card reveal">
+          <div class="process-number">02</div>
+          <h3>Design</h3>
+          <p>Define system architecture, select technologies, and develop an engineering plan.</p>
+        </div>
+
+        <div class="process-card reveal">
+          <div class="process-number">03</div>
+          <h3>Develop</h3>
+          <p>Build hardware, software, firmware, and intelligent system components.</p>
+        </div>
+
+        <div class="process-card reveal">
+          <div class="process-number">04</div>
+          <h3>Validate</h3>
+          <p>Integrate, test, evaluate performance, and improve the solution iteratively.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="contact-box reveal">
+        <div class="section-label">LET'S BUILD THE FUTURE</div>
+
+        <h2>Have a Challenge? <span class="gradient-text">Let's Engineer It.</span></h2>
+
+        <p>
+          We welcome collaboration with companies, startups, research
+          organizations, engineers, and potential industry partners.
+          Let's explore how intelligent robotics can create real value.
+        </p>
+
+        <div class="contact-actions">
+          <!-- Replace these example contact details with official company details -->
+          <a href="mailto:YOUR_EMAIL@example.com" class="btn btn-primary">
+            Contact Us ↗
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/ziad-hatem-416125307/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-outline"
+          >
+            LinkedIn ↗
+          </a>
+
+          <a
+            href="https://github.com/ziadhate"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-outline"
+          >
+            GitHub ↗
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container footer-content">
+    <a href="#home" class="logo">
+      <span class="logo-icon">⌘</span>
+      <span>ROBOTICS<span class="gradient-text"> SOLUTIONS</span></span>
+    </a>
+
+    <div class="footer-copy">
+      © <span id="year"></span> Robotics Solutions. All rights reserved.
+    </div>
+
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#solutions">Solutions</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile navigation
+  const menuBtn = document.getElementById("menuBtn");
+  const navLinks = document.getElementById("navLinks");
+
+  menuBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+    menuBtn.textContent = navLinks.classList.contains("active") ? "×" : "☰";
+  });
+
+  // Close menu after selecting a section
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("active");
+      menuBtn.textContent = "☰";
+    });
+  });
+
+  // Reveal animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll(".reveal").forEach(element => {
+    observer.observe(element);
+  });
+
+  // Dynamic copyright year
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
